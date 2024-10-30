@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: j3t7i2mmr-java-quarkus
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: j3t7i2mmr-java-quarkus 
+  name: j3t7i2mmr-java-quarkus
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: j3t7i2mmr-java-quarkus
+    weight: 100 
